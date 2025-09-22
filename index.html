@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLABs Simulation Template</title>
+  <link rel="stylesheet" href="src/css/core_template.css">
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+  <div class="embed-container">
+    <div class="embed-content">
+      <div id="app"></div>
+    </div>
+  </div>
+  <script type="module" src="src/js/main.js"></script>
+  <script>
+    function scaleEmbedContent() {
+      const container = document.querySelector('.embed-container');
+      const content = document.querySelector('.embed-content');
+      // const containerWidth = container.offsetWidth;
+      // const containerHeight = container.offsetHeight;
+      // const scaleX = containerWidth / 1440;
+      // const scaleY = containerHeight / 810;
+      // const scale = Math.min(scaleX, scaleY);
+      // content.style.transform = `scale(${scale})`;
+      // window.embedScale = scale;
+
+      const containerWidth = container.offsetWidth;
+      const scale = containerWidth / 1440;
+      content.style.transform = `scale(${scale})`;      
+      container.style.height = `${810 * scale}px`;      
+      window.embedScale = scale;
+    }
+ 
+    window.addEventListener('resize', scaleEmbedContent);
+    window.addEventListener('DOMContentLoaded', scaleEmbedContent); 
+  </script>
+</body>
+</html>

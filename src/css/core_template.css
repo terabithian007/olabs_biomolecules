@@ -1,0 +1,207 @@
+/* Happy Monkey */
+@font-face {
+  font-family: 'Happy Monkey';
+  src: url('./fonts/HappyMonkey-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Poppins Regular */
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Poppins SemiBold */
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Poppins Bold */
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Noto Sans Devanagari - for Hindi text */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  src: url('./fonts/NotoSansDevanagari-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-weight: 400 700;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #000;
+  min-height: 100vh;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hindi language specific styles */
+body[data-language="hi"] {
+  font-family: 'Noto Sans Devanagari', 'Poppins', Arial, sans-serif;
+}
+
+body[data-language="hi"] .sim-title {
+  font-family: 'Noto Sans Devanagari', 'Happy Monkey', auto;
+}
+
+body[data-language="hi"] .sim-section-title,
+body[data-language="hi"] .sim-section-title-underline {
+  font-family: 'Noto Sans Devanagari', 'Happy Monkey', auto;
+}
+
+.embed-container {
+  background-color: #2d3a5a;
+  background-image: url('../images/bg_pattern.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.embed-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Core template: title and content layout */
+.sim-title {
+  background: #67CCD5;
+  border-radius: 16px;
+  padding: 1.2rem 3.5rem;
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+  color: #222;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  font-family: 'Happy Monkey', auto;
+  align-self: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sim-subtitle {  
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+  color: #3E2283;  
+}
+
+.sim-single-card-content {
+  width: min(72%, 1060px);    
+  background-color: #eaeaea;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  padding: 2.5rem 3.5rem 2.5rem 3.5rem;            
+}
+
+.sim-content {
+  background: #eaeaea;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2.5rem 3.5rem 2.5rem 3.5rem;
+  max-width: 750px;
+  width: 100%;  
+  position: relative;
+  z-index: 1;
+}
+
+.sim-content-no-padding {
+  background: #eaeaea;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);  
+  max-width: 750px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.sim-section-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: #222;
+  font-family: 'Happy Monkey', auto;
+}
+
+.sim-section-title-underline {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: #222;
+  text-decoration: underline;
+  font-family: 'Happy Monkey', auto;
+}
+
+.sim-instructions-card {
+  background: #eaeaea;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 1.0rem 1.5rem 1.0rem 1.5rem;
+  max-width: 750px;
+  width: 100%;  
+}
+
+.sim-instructions {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: #222;  
+}
+
+.sim-list {
+  margin: 0.5rem 0 1.5rem 1.5rem;
+  padding: 0;
+  color: #222;
+  font-size: 1.15rem;
+}
+
+.sim-btn {
+  display: block;
+  margin: 2.5rem auto 0 auto;
+  padding: 1rem 3.5rem;
+  background: #3b6ef6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sim-btn:hover {
+  background: #274bb5;
+}
+
