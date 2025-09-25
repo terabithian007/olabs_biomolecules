@@ -1505,6 +1505,7 @@ export function renderRNASimulation() {
   }
 
   function onPointerMove(event) {
+    if(state.step >= 2 && state.step<6) return;
     if (!isDraggingDNA) return;
     const dx = event.clientX - previousPointer.x;
     const dy = event.clientY - previousPointer.y;

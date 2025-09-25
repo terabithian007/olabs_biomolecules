@@ -1228,7 +1228,7 @@ export function renderDNASimulation() {
 
   function startUnwindToPlane() {
     if (!dnaGroup || unwind.started || unwind.finished) return;
-    autoRotate = false;
+    autoRotate = false;        
     computePlanarTargets();
     captureStarts();
     // also capture group rotation and target it to identity, so the ladder aligns with view axes
@@ -2263,6 +2263,7 @@ export function renderDNASimulation() {
   }
 
   function onPointerMove(event) {
+    if(state.step >= 2 && state.step<6) return;
     if (!isDraggingDNA) return;
     const dx = event.clientX - previousPointer.x;
     const dy = event.clientY - previousPointer.y;
@@ -2572,7 +2573,7 @@ export function renderDNASimulation() {
       startUnwindToPlane();
       if(nextBtn){
         nextBtn.textContent = t('zoomButton');
-      }
+      }      
     } else if(state.step === 3) {
       if(nextBtn){
         nextBtn.textContent = t('viewBondsButton');
@@ -2608,12 +2609,12 @@ export function renderDNASimulation() {
       if(nextBtn){
         nextBtn.textContent = t('mainMenuButton');
       }      
-      revertToOriginalHelix();      
+      revertToOriginalHelix();
       animateCameraToLookAt(
         new THREE.Vector3(0, 0, 100),
         100,
         2500
-      );       
+      );      
     }
     updateInstructions();
   }

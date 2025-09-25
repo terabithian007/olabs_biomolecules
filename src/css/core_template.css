@@ -197,7 +197,7 @@ body[data-language="hi"] .sim-section-title-underline {
   border-radius: 8px;
   font-size: 1.3rem;
   font-weight: 600;
-  cursor: pointer;
+  cursor: url('../images/cursor_hand.png') 14 4, pointer;
   transition: background 0.2s;
 }
 
